@@ -2,13 +2,13 @@
   ******************************************************************************
   * @file    stm32f0xx_hal_dma_ex.h
   * @author  MCD Application Team
-  * @version V1.2.1
-  * @date    09-January-2015
+  * @version V1.4.0
+  * @date    27-May-2016
   * @brief   Header file of DMA HAL Extension module.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
+  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -50,9 +50,10 @@
   * @{
   */
 
-/** @addtogroup DMAEx
+/** @defgroup DMAEx DMAEx
+  * @brief DMA HAL module driver
   * @{
-  */ 
+  */
 
 /* Exported types ------------------------------------------------------------*/ 
 /* Exported constants --------------------------------------------------------*/
@@ -563,6 +564,20 @@
    DMA_FLAG_TE7)
 
 /**
+  * @brief  Return the current DMA Channel Global interrupt flag.
+  * @param  __HANDLE__: DMA handle
+  * @retval The specified transfer error flag index.
+  */
+#define __HAL_DMA_GET_GI_FLAG_INDEX(__HANDLE__)\
+(((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel1))? DMA_FLAG_GL1 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel2))? DMA_FLAG_GL2 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel3))? DMA_FLAG_GL3 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel4))? DMA_FLAG_GL4 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel5))? DMA_FLAG_GL5 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel6))? DMA_FLAG_GL6 :\
+   DMA_FLAG_GL7)
+
+/**
   * @brief  Get the DMA Channel pending flags.
   * @param  __HANDLE__: DMA handle
   * @param  __FLAG__: Get the specified flag.
@@ -648,6 +663,25 @@
    DMA_FLAG_TE5)
 
 /**
+  * @brief  Return the current DMA Channel Global interrupt flag.
+  * @param  __HANDLE__: DMA handle
+  * @retval The specified transfer error flag index.
+  */
+#define __HAL_DMA_GET_GI_FLAG_INDEX(__HANDLE__)\
+(((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel1))? DMA_FLAG_GL1 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel2))? DMA_FLAG_GL2 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel3))? DMA_FLAG_GL3 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel4))? DMA_FLAG_GL4 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel5))? DMA_FLAG_GL5 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel6))? DMA_FLAG_GL6 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel7))? DMA_FLAG_GL7 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA2_Channel1))? DMA_FLAG_GL1 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA2_Channel2))? DMA_FLAG_GL2 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA2_Channel3))? DMA_FLAG_GL3 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA2_Channel4))? DMA_FLAG_GL4 :\
+   DMA_FLAG_GL5)
+
+/**
   * @brief  Get the DMA Channel pending flags.
   * @param  __HANDLE__: DMA handle
   * @param  __FLAG__: Get the specified flag.
@@ -716,6 +750,18 @@
    DMA_FLAG_TE5)
 
 /**
+  * @brief  Return the current DMA Channel Global interrupt flag.
+  * @param  __HANDLE__: DMA handle
+  * @retval The specified transfer error flag index.
+  */
+#define __HAL_DMA_GET_GI_FLAG_INDEX(__HANDLE__)\
+(((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel1))? DMA_FLAG_GL1 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel2))? DMA_FLAG_GL2 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel3))? DMA_FLAG_GL3 :\
+ ((uint32_t)((__HANDLE__)->Instance) == ((uint32_t)DMA1_Channel4))? DMA_FLAG_GL4 :\
+   DMA_FLAG_GL5)
+
+/**
   * @brief  Get the DMA Channel pending flags.
   * @param  __HANDLE__: DMA handle
   * @param  __FLAG__: Get the specified flag.
@@ -781,4 +827,3 @@
 #endif /* __STM32F0xx_HAL_DMA_EX_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-
